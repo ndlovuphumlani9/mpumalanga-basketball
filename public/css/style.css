@@ -1,0 +1,582 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    color: #0b1f3a;
+}
+
+.navbar {
+    background: #0b1f3a;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: #ffd21f;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #ffd21f;
+}
+
+footer {
+    background: #0b1f3a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+footer span {
+    color: #ffd21f;
+}
+
+.hero {
+    min-height: 550px;
+    background: #0b1f3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero h1 {
+    color: white;
+    font-size: 58px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ffd21f;
+}
+
+.hero p {
+    color: #dce4ef;
+    font-size: 21px;
+    margin-bottom: 35px;
+}
+
+.btn {
+    display: inline-block;
+    background: #ffd21f;
+    color: #0b1f3a;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background: white;
+}
+
+.section {
+    padding: 70px 7%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 34px;
+    margin-bottom: 15px;
+}
+
+.section-intro {
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+}
+
+.age-card {
+    border-top: 5px solid #ffd21f;
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Registration Page */
+
+.registration-section {
+    padding: 60px 7%;
+    background: #f5f7fa;
+}
+
+.registration-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.registration-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.registration-header h1 {
+    color: #0b1f3a;
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.registration-header p {
+    color: #666;
+    font-size: 17px;
+}
+
+.form-section {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+}
+
+.form-section h2 {
+    color: #0b1f3a;
+    font-size: 24px;
+    margin-bottom: 25px;
+    border-left: 5px solid #ffd21f;
+    padding-left: 12px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    color: #0b1f3a;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d5dbe3;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #ffd21f;
+    box-shadow: 0 0 0 2px rgba(255, 210, 31, 0.2);
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.form-submit button {
+    background: #0b1f3a;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-submit button:hover {
+    background: #ffd21f;
+    color: #0b1f3a;
+}
+
+@media (max-width: 768px) {
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-section {
+        padding: 40px 5%;
+    }
+
+    .form-section {
+        padding: 20px;
+    }
+
+    .registration-header h1 {
+        font-size: 32px;
+    }
+} 
+
+/* =========================================
+   PLAYER REGISTRATION SUCCESS PAGE
+   ========================================= */
+
+.success-container {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+    background: #f5f7fa;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 650px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.10);
+    border-top: 6px solid #f4c400;
+}
+
+.success-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #f4c400;
+    color: #0b1f3a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.success-card h1 {
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.success-message {
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.registration-details {
+    text-align: left;
+    background: #f5f7fa;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.registration-details h2 {
+    color: #0b1f3a;
+    margin-bottom: 20px;
+}
+
+.registration-details p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.player-photo {
+    margin: 25px 0;
+}
+
+.player-photo img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #f4c400;
+}
+
+.success-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.btn-primary {
+    background: #0b1f3a;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: #f4c400;
+    color: #0b1f3a;
+}
+
+.btn-secondary {
+    background: #f4c400;
+    color: #0b1f3a;
+}
+
+.btn-secondary:hover {
+    background: #0b1f3a;
+    color: #ffffff;
+}
+
+/* =========================================
+   REGISTERED PLAYERS PAGE
+   ========================================= */
+
+.players-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.players-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.players-header h1 {
+    color: #0b1f3a;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.players-header p {
+    color: #666;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.player-card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10);
+    border-top: 5px solid #f4c400;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.player-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.player-card .player-photo {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.player-photo-placeholder {
+    width: 100%;
+    height: 250px;
+    background: #0b1f3a;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.player-info {
+    padding: 22px;
+}
+
+.player-info h2 {
+    color: #0b1f3a;
+    margin-bottom: 15px;
+    font-size: 22px;
+}
+
+.player-info p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.player-info strong {
+    color: #0b1f3a;
+}
+
+.no-players {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f5f7fa;
+    border-radius: 14px;
+}
+
+.no-players h2 {
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.no-players p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 600px) {
+
+    .players-header h1 {
+        font-size: 28px;
+    }
+
+    .players-container {
+        padding: 30px 15px;
+    }
+
+}
+
+/* =========================
+   DISTRICTS PAGE
+   ========================= */
+
+.districts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.districts-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.districts-header h1 {
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.districts-header p {
+    color: #666;
+}
+
+.districts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.district-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 5px solid #f4c400;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.district-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.district-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.district-card h2 {
+    color: #0b1f3a;
+    margin-bottom: 10px;
+}
+
+.district-short-name {
+    display: inline-block;
+    background: #f4c400;
+    color: #0b1f3a;
+    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.district-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+
+    .districts-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
