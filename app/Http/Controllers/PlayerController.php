@@ -2,17 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\District;
 use App\Models\Player;
 use Illuminate\Http\Request;
+use App\Models\Team;
+
 
 class PlayerController extends Controller
 {
-        public function index()
+    public function index()
     {
         $players = Player::latest()->get();
 
         return view('pages.player.index', compact('players'));
     }
+
+    public function create()
+    {
+        $districts = District::orderBy('name')->get();
+
+        $teams = Team::with('district')
+            ->orderBy('name')
+            ->get();
+
+        return view('pages.player.register', compact('districts', 'teams'));
+    }
+
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -42,5 +57,5 @@ class PlayerController extends Controller
         $player = Player::create($validated);
 
         return view('pages.player.success', compact('player'));
-        }
+    }
 }

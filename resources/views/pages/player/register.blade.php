@@ -201,45 +201,40 @@
 
 
                     <div class="form-group">
-                        <label for="district">District</label>
+                        <label for="district">District *</label>
 
-                        <select
-                            id="district"
-                            name="district"
-                            required
-                        >
+                        <select id="district" name="district" required>
+                            <option value="">Select District</option>
 
-                            <option value="">
-                                Select district
-                            </option>
-
-                            <option value="gert_sibande">
-                                Gert Sibande
-                            </option>
-
-                            <option value="nkangala">
-                                Nkangala
-                            </option>
-
-                            <option value="ehlanzeni">
-                                Ehlanzeni
-                            </option>
-
+                            @foreach($districts as $district)
+                                <option
+                                    value="{{ $district->name }}"
+                                    {{ old('district') == $district->name ? 'selected' : '' }}
+                                >
+                                    {{ $district->name }}
+                                   
+                                </option>
+                            @endforeach
                         </select>
                     </div>
 
 
                     <div class="form-group">
-                        <label for="current_team">
-                            Current Team
-                        </label>
+                    <label for="current_team">Current Team</label>
 
-                        <input
-                            type="text"
-                            id="current_team"
-                            name="current_team"
-                            placeholder="Enter your team"
-                        >
+                    <select id="current_team" name="current_team">
+                        <option value="">Select Team</option>
+
+                        @foreach($teams as $team)
+                            <option
+                                value="{{ $team->name }}"
+                                data-district="{{ $team->district->name }}"
+                                {{ old('current_team') == $team->name ? 'selected' : '' }}
+                            >
+                                {{ $team->name }}
+                            </option>
+                        @endforeach
+                    </select>
                     </div>
 
                 </div>
@@ -328,5 +323,40 @@
     </div>
 
 </section>
+
+<script>
+    const districtSelect = document.getElementById('district');
+    const teamSelect = document.getElementById('current_team');
+
+    function filterTeams() {
+        const selectedDistrict = districtSelect.value;
+
+        Array.from(teamSelect.options).forEach(option => {
+
+            if (option.value === '') {
+                option.hidden = false;
+                return;
+            }
+
+            const teamDistrict = option.dataset.district;
+
+            option.hidden = selectedDistrict !== '' &&
+                            teamDistrict !== selectedDistrict;
+        });
+
+        // Reset team selection when district changes
+        if (
+            teamSelect.value !== '' &&
+            teamSelect.selectedOptions[0].hidden
+        ) {
+            teamSelect.value = '';
+        }
+    }
+
+    districtSelect.addEventListener('change', filterTeams);
+
+    // Run once when the page loads
+    filterTeams();
+</script>
 
 @endsection
